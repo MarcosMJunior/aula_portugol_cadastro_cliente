@@ -1,0 +1,120 @@
+Algoritmo "Dados do cliente"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Lorrany
+// Descrição   : Pede e mostra os dados de um usuário
+// Autor(a)    : Marcos
+// Data atual  : 07/12/2022
+Var
+// Seção de Declarações das variáveis 
+nome_cliente: caracter
+funcao validar_nome_vazio (nome_cliente:caracter): logico
+
+inicio
+      se (nome_cliente="") entao
+         retorne falso
+      senao
+         retorne verdadeiro
+      fimse
+fimfuncao
+
+procedimento solicitar_nome_cliente
+inicio
+      escreva ("Nome: ")
+         leia (nome_cliente)
+fimprocedimento
+
+idade:inteiro
+funcao validar_idade (idade:inteiro): logico
+
+inicio
+      se (idade <=0) entao
+         retorne falso
+      senao
+         retorne verdadeiro
+      fimse
+fimfuncao
+
+procedimento solicitar_idade
+inicio
+      escreva ("Idade: ")
+               leia (idade)
+fimprocedimento
+
+email: caracter
+funcao validar_email (email:caracter):logico
+
+inicio
+      se (email="") entao
+         retorne falso
+      senao
+         retorne verdadeiro
+      fimse
+fimfuncao
+
+procedimento solicitar_email
+inicio
+      escreva  ("Email: ")
+               leia (email)
+fimprocedimento
+
+rua: caracter
+numero: inteiro
+bairro: caracter
+cidade: caracter
+estado: caracter
+cep: inteiro
+
+procedimento solicitar_endereco
+inicio
+      escreva ("Rua: ")
+              leia (rua)
+      escreva ("Número: ")
+              leia (numero)
+      escreva ("Bairro: ")
+              leia (bairro)
+      escreva ("Cidade: ")
+              leia (cidade)
+      escreva ("Estado: ")
+              leia (estado)
+      escreva ("CEP: ")
+              leia (cep)
+
+fimprocedimento
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc... 
+solicitar_nome_cliente
+   
+       enquanto (validar_nome_vazio(nome_cliente)=falso) faca
+           escreval ("Nome Inválido")
+   solicitar_nome_cliente
+
+fimenquanto
+
+solicitar_idade
+
+               enquanto (validar_idade(idade)=falso) faca
+                        escreval ("idade Inválida")
+               solicitar_idade
+               fimenquanto
+               
+solicitar_email
+
+               enquanto (validar_email(email)=falso) faca
+                        escreval ("Email inválido")
+               solicitar_email
+               fimenquanto
+
+solicitar_endereco
+
+limpatela
+
+escreval ("   DADOS DO USUARIO   ")
+escreval ("----------------------")
+escreval ("Nome: ", nome_cliente)
+escreval ("Idade: ", idade)
+escreval ("Email: ", email)
+escreval ("Endereço: Rua ", rua, " nº", numero, " Bairro ", bairro)
+escreval ("Cidade ", cidade, "/", estado, " CEP ", cep)
+
+Fimalgoritmo
